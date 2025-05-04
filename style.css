@@ -1,0 +1,83 @@
+
+body {
+    background: linear-gradient(to bottom,#67E3CB, #59B1D9, #4B88E5);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.main-container {
+    background-color: white;
+    padding: 1rem;
+    width: 350px;
+    border-radius: 0.5rem;
+    max-width: 90%;
+    font-family: poppins, sans-serif;
+}
+
+.heading{
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+}
+
+.new{
+    font-size: 1rem;
+    border-style: none;
+    border: 1px solid rgb(198, 196, 196);
+    border-radius: 0.2rem;
+    padding: 0.6rem 6rem 0.6rem 0.6rem;
+}
+
+.add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bxs-plus-square{
+    color:#8E4AE5;
+    font-size: 3rem;
+}
+
+.bxs-plus-square:hover{
+    color: #A77BFF;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #F3F1F4;
+    padding: 0.6rem;
+    border-radius: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover {
+    background-color: #EDE9F0;
+    cursor: pointer;
+}
+
+.delete-icon {
+    font-size: 1.2rem;
+    color: white;
+    background-color:rgb(244, 119, 119) ;
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+}
+
+.delete-icon:hover{
+    background-color: rgb(242, 54, 54);
+    cursor: pointer;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
