@@ -1,36 +1,39 @@
-let ul = document.querySelector("ul");
-let li = document.querySelector("li");
-let inp = document.querySelector("input");
-const addIcon = document.querySelector(".add-icon");
+let inputBox = document.getElementById("input-box")
+let listContainer = document.getElementById("list-container")
 
-addIcon.addEventListener("click" , function() {
-    if (inp.value.trim() === "") return;
-    let item = document.createElement("li");
-    item.innerText = inp.value;
-
-    let delBtn = document.createElement("i")
-    delBtn.classList.add("bx" , "bxs-trash-alt" , "delete-icon");
-
-    item.appendChild(delBtn);
-    ul.appendChild(item);
-    inp.value = "";
-})
-
-ul.addEventListener("click" , function(event) {
-    if (event.target.nodeName == "I") {
-        let listItem = event.target.parentElement;
-        listItem.remove();
+function addTask() {
+    if(inputBox.value === '') {
+        alert("You must write something!");
     }
-}) 
+    else {
+        let li = document.createElement("li");
+        li.innerHTML = inputBox.value;
+        listContainer.appendChild(li);
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
+    }
+    inputBox.value = "";
+    saveData();
+}
 
+listContainer.addEventListener("click" , function(e) {
+    if(e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+        saveData();
+    }
+    else if (e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+        saveData();
+    }
+}, false);
 
+function saveData() {
+    localStorage.setItem("data" , listContainer.innerHTML);
+}
 
-// let delBtns = document.querySelectorAll(".delete-icon");
+function showTask() {
+    listContainer.innerHTML = localStorage.getItem("data");
+}
 
-// for(delBtn of delBtns) {
-//     delBtn.addEventListener("click" , function() {
-//         let par = this.parentElement;
-//         console.log(par);
-//         par.remove();
-//     })
-// }
+showTask();

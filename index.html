@@ -18,17 +18,17 @@
   </head>
   <body>
     <div class="main-container">
-      <h2 class="heading">Todo App</h2>
-      <div class="add">
-        <input class="new" placeholder="Add your new todo" />
-        <i class="bx bxs-plus-square add-icon"></i>
+      <h2 class="heading">To-Do List</h2>
+      <div class="row">
+        <input class="new" id="input-box" placeholder="Add your new todo" />
+        <button onclick="addTask()">Add</button>
       </div>
 
-      <ul>
-        <li>Buy a new gaming laptop <i class='bx bxs-trash-alt delete-icon'></i></li>
-        <li>Complete a previous task <i class='bx bxs-trash-alt delete-icon'></i></li>
-        <li>Create video for Youtube <i class='bx bxs-trash-alt delete-icon'></i></li>
-        <li>Create a new portfolio site <i class='bx bxs-trash-alt delete-icon'></i></li>
+      <ul id="list-container">
+        <!-- <li class="checked">Buy a new gaming laptop </li>
+        <li>Complete a previous task </li>
+        <li>Create video for Youtube </li>
+        <li>Create a new portfolio site </li> -->
       </ul>
     </div>
 

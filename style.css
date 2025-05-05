@@ -1,6 +1,6 @@
 
 body {
-    background: linear-gradient(to bottom,#67E3CB, #59B1D9, #4B88E5);
+    background: linear-gradient(135deg , #153677 , #4e085f);
     height: 100vh;
     margin: 0;
     display: flex;
@@ -19,65 +19,81 @@ body {
 
 .heading{
     font-size: 1.8rem;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
 }
 
 .new{
-    font-size: 1rem;
-    border-style: none;
-    border: 1px solid rgb(198, 196, 196);
-    border-radius: 0.2rem;
-    padding: 0.6rem 6rem 0.6rem 0.6rem;
+    flex:1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
 }
 
-.add {
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.bxs-plus-square{
-    color:#8E4AE5;
-    font-size: 3rem;
-}
-
-.bxs-plus-square:hover{
-    color: #A77BFF;
-    cursor: pointer;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    background-color: #F3F1F4;
-    padding: 0.6rem;
-    border-radius: 0.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-li:hover {
-    background-color: #EDE9F0;
-    cursor: pointer;
-}
-
-.delete-icon {
-    font-size: 1.2rem;
-    color: white;
-    background-color:rgb(244, 119, 119) ;
-    padding: 0.3rem;
-    border-radius: 0.2rem;
-}
-
-.delete-icon:hover{
-    background-color: rgb(242, 54, 54);
-    cursor: pointer;
+    background: #edeef0;
+    border-radius: 1.875rem;
+    padding-left: 1.25rem;
+    margin-bottom: 25px;
 }
 
 ul li {
-    margin-bottom: 0.5rem;
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 0;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top : 11px;
+    left: -33px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #edeef0;
 }
